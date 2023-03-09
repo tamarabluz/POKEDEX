@@ -1,17 +1,38 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Searchbar from './components/Searchbar';
+import Pokedex from './components/Pokedex';
+import { getPokemons} from './api';
+
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <Searchbar/>
-    <div className="App">
-    </div>
-    </div>
-  );
-}
+  const [loading, setLoading] = useState(false);
+  const [pokemons, setPokemons] = useState([]);
 
-export default App;
+  const fetchPokemons = async () => {
+    try {
+      setLoading(true)
+      const result = await getPokemons()
+      setPokemons(result)
+      setLoading(false)
+    } catch (error) {
+      console.log("fetchPokemons error: ", error);
+    }
+  }
+    useEffect(() => {
+      console.log("carregou")
+      fetchPokemons();
+    }, [])
+
+
+    return (
+      <div>
+        <Navbar />
+        <Searchbar />
+        <Pokedex pokemons={pokemons} loading={loading}/>
+      </div>
+    );
+  }
+
+  export default App;
