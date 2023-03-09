@@ -3,6 +3,7 @@ import Pokemon from "./Pokemon";
 
 const Pokedex = (props) => {
     const { pokemons, loading } = props;
+    console.log("pokemons", pokemons)
     return (
         <div>
             <div className="pokedex-header">
