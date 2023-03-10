@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 10px;
   }
   
   .pokedex-logo {
     width: 300px;
     height: auto;
+    flex-grow: 1;
   }
   
   .bgc-logo {
@@ -17,5 +18,5 @@
 
   .navbar-favorites {
         font-weight: bold;
-        margin-left: 1rem;
+        margin-left: 1rm;
   }
