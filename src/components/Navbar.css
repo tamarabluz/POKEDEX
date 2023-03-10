@@ -5,12 +5,17 @@
     padding: 1rem;
   }
   
-  .navbar-logo {
-    width: 50px;
-    height: 50px;
+  .pokedex-logo {
+    width: 300px;
+    height: auto;
   }
   
+  .bgc-logo {
+    width: 100px;
+    height: auto;
+  }
+
   .navbar-favorites {
-    font-weight: bold;
-    margin-left: 1rem;
+        font-weight: bold;
+        margin-left: 1rem;
   }
