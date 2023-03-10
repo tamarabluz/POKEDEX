@@ -4,6 +4,7 @@ import pokedexlogo from "../assets/pokedexlogo.png";
 import bgclogo from "../assets/bgclogo.png";
 import "./Navbar.css";
 
+
 const Navbar = () => {
   const { favoritePokemons } = useContext(FavoriteContext);
   const logoImg =
@@ -24,4 +25,3 @@ const Navbar = () => {
 };
   
   
-  export default Navbar;
