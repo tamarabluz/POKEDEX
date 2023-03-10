@@ -71,7 +71,7 @@ nav {
 }
 
 .pokemon-image {
-  width: 70px;
+  width: 200px;
   height: auto;
   margin-right: 10px;
 }
@@ -139,6 +139,15 @@ nav {
   font-size: 2rem;
   padding: 20px;
 }
+.card-move {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+
 
 .App {
   text-align: center;

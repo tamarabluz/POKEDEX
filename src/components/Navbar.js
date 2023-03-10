@@ -11,9 +11,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div>
-        <img src={bgclogo} alt="bgc Logo" className="bgc-logo" />
-      </div>
+      <a href="https://www.bgcbrasil.com.br/" className="button-link">
+  <div>
+    <img src={bgclogo} alt="bgc Logo" className="bgc-logo" />
+  </div>
+</a>
       <div>
         <img src={pokedexlogo} alt="Pokedex Logo" className="pokedex-logo" />
       </div>
