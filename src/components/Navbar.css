@@ -6,17 +6,17 @@
   }
   
   .pokedex-logo {
-    width: 300px;
+    width: 400px;
     height: auto;
     flex-grow: 1;
   }
   
   .bgc-logo {
-    width: 100px;
+    width: 200px;
     height: auto;
   }
 
   .navbar-favorites {
         font-weight: bold;
-        margin-left: 1rm;
+        margin-left: 5rm;
   }
