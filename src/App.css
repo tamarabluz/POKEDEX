@@ -2,19 +2,8 @@
   margin: 0px;
 }
 
-nav {
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-}
 
-.pokedex-img {
-  width: 500px;
-  height: auto;
-}
+
 
 .searchbar-container {
   display: flex;
@@ -51,6 +40,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  margin: 0 auto;
 }
 
 .pokedex-grid {
@@ -61,12 +51,16 @@ nav {
 
 .pokemon-card {
   display: flex;
+  background-color: #9ec8dd;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   margin-bottom: 20px;
-  
+  max-width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
   
 }
 
@@ -74,48 +68,80 @@ nav {
   width: 200px;
   height: auto;
   margin-right: 10px;
+ 
 }
 
 .pokemon-image-container {
+  display: flex;
+  justify-content: center;
   padding: 0px 5px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
   flex: 1;
+  
 }
 
 .card-top {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 }
 
 .card-top h3 {
+  display: flex;
+  justify-content: center;
   text-transform: capitalize;
+  color: white;
+}
+.pokemon-id {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  background-color: #f2cb07;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
 }
 
 .card-bottom {
   display: flex;
+  color: rgb(255, 255, 255);
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
+
 .pokemon-type {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-right: 10px;
 }
 
 .pokemon-type-text {
   margin-right: 10px;
   text-transform: capitalize;
+  background-color: #ff7f50;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .pagination-container {
@@ -140,13 +166,25 @@ nav {
   padding: 20px;
 }
 .card-move {
-  background-color: #f9f9f9;
+  background-color: #f3ebeb;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  /* Estilos para telas menores que 767px */
+  .pokedex-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 479px) {
+  /* Estilos para telas menores que 479px */
+  .pokedex-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 
 .App {
