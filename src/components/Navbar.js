@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import FavoriteContext from "../contexts/favoritesContext";
 import { Auth } from "aws-amplify";
 import pokedexlogo from "../assets/pokedexlogo.png";
-import bgclogo from "../assets/bgclogo2.png";
+import bgclogo from "../assets/bgclogo3.png";
 import "./Navbar.css";
 
 
@@ -24,9 +24,9 @@ const Navbar = () => {
           <img src={pokedexlogo} alt="Pokedex Logo" className="pokedex-logo" />
         </div>
         <div className="button-container">
-          <button className="favorites-button">
-            Favorites {favoritePokemons.length} ❤️
-          </button>
+        <div className="favorites-button">
+    Favorites {favoritePokemons.length} ❤️
+  </div>
           <button className="signout-button" onClick={() => Auth.signOut()}>
             Signout
           </button>
