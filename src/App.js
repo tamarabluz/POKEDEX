@@ -48,23 +48,20 @@ function App() {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(favoritesKey, JSON.stringify(favorites));
-  }, [favorites]);
-
-  useEffect(() => {
     fetchPokemons();
   }, [page]);
 
   const updateFavoritePokemons = (name) => {
-    const updatedFavorites = [...favorites];
-    const favoriteIndex = favorites.indexOf(name);
-    if (favoriteIndex >= 0) {
+    const updatedFavorites = [...favorites]
+    const favoriteIndex = favorites.indexOf(name)
+    if(favoriteIndex >= 0) {
       updatedFavorites.splice(favoriteIndex, 1);
-    } else {
+    }else {
       updatedFavorites.push(name);
     }
-    setFavorites(updatedFavorites);
-  };
+    window.localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites))
+    setFavorites(updatedFavorites)
+  }
 
   const onSearchHandler = async (pokemon) => {
     if (!pokemon) {
@@ -111,7 +108,6 @@ function App() {
     </div>
   </FavoriteProvider>
 </Authenticator>
-
   );
 }
 

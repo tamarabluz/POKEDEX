@@ -71,8 +71,34 @@
   margin-left: 20px;
   margin-right: 20px;
   position: relative;
+  transition: background-color 0.3s ease;
   
 }
+.pokemon-card:hover {
+  background-color: #7da8c3;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+  
+}
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.loading.active {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
 
 .pokemon-image {
   width: 200px;
