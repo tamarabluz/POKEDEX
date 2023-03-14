@@ -1,48 +1,172 @@
 .navbar {
+  background-color: #0f224a;
+  height: 64px;
+  padding: 0 16px;
+}
+
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  height: 100%;
+  margin: none;
+  max-width: 1200px;
+  padding: 0 16px;
 }
 
-.pokedex-logo {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
+.logo-container {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
+  justify-content: center;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .bgc-logo {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  flex-shrink: 1;
+  height: 150px;
+  margin-right: 16px;
 }
 
-.navbar-favorites {
-  font-weight: bold;
-  margin-left: 2rem;
+.pokedex-logo {
+  height: 65px;
 }
 
-@media (max-width: 768px) {
-  .navbar {
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  text-align: center;
+  margin-left: auto;
+}
+
+.favorites-button,
+.signout-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.favorites-button:hover,
+.signout-button:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-container {
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+    height: auto;
   }
-
-  .navbar-favorites {
+  
+  .logo-container {
+    margin-bottom: 16px;
+  }
+  
+  .button-container {
+    margin-top: 16px;
+  }
+  
+  .favorites-button,
+  .signout-button {
     margin-left: 0;
-    margin-top: 1rem;
-  }
-
-  .pokedex-logo,
-  .bgc-logo {
-    max-width: 100%;
   }
 }
 
+.bgc-logo {
+  height: 150px;
+  margin-right: auto;
+}
 
+.pokedex-logo {
+  height: 65px;
+  margin-left: auto;
+}
 
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  
+}
 
+.favorites-button,
+.signout-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left:auto;
+  cursor: pointer;
+}
+
+.favorites-button:hover,
+.signout-button:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: auto;
+  }
+  
+  .logo-container {
+    margin-bottom: 16px;
+  }
+  
+  .button-container {
+    margin-top: 16px;
+  }
+  
+  .favorites-button,
+  .signout-button {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .navbar {
+    height: auto;
+  }
+  
+  .navbar-container {
+    align-items: center;
+  }
+  
+  .logo-container {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .bgc-logo {
+    display: block;
+    height: 40px;
+    margin-right: 0;
+  }
+  
+  .pokedex-logo {
+    height: 40px;
+    margin-left: 0;
+  }
+}
