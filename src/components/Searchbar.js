@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-import { Auth } from 'aws-amplify';
-
 const Searchbar = (props) => {
     const [search, setSearch] = useState("dito")
     const {onSearch} = props
@@ -23,9 +21,7 @@ const Searchbar = (props) => {
             <div className="searchbar-btn">
                 <button onClick={onButtonClickHandler} >Search</button>
             </div>
-            <div className="navbar-signout">
-  <button onClick={() => Auth.signOut()}>Signout</button>
-</div>
+            
         </div>
     )
 }
