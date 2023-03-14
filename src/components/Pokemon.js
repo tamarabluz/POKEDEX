@@ -8,16 +8,17 @@ const Pokemon = (props) => {
 
     useEffect(() => {
         const fetchMoveDescription = async () => {
-            try {
-                const response = await fetch(`https://pokeapi.co/api/v2/move/${pokemon.moves[0].move.name}`);
-                const data = await response.json();
-                setMoveDescription(data.effect_entries[0].short_effect);
-            } catch (error) {
-                console.error(error);
-            }
+          if (!pokemon.moves.length) return;
+          try {
+            const response = await fetch(`https://pokeapi.co/api/v2/move/${pokemon.moves[0].move.name}`);
+            const data = await response.json();
+            setMoveDescription(data.effect_entries[0].short_effect);
+          } catch (error) {
+            console.error(error);
+          }
         };
         fetchMoveDescription();
-    }, [pokemon.moves]);
+      }, [pokemon.moves]);
 
     const onHeartClick = () => {
         updateFavoritePokemons(pokemon.name);

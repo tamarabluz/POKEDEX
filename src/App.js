@@ -5,11 +5,11 @@ import Navbar from "./components/Navbar";
 import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
 import { FavoriteProvider } from "./contexts/favoritesContext";
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
+const favoritesKey = "f";
 
-
-
-const favoritesKey = "f"
 function App() {
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
@@ -19,6 +19,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
 
   const itensPerPage = 51;
+
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -38,71 +39,80 @@ function App() {
   };
 
   const loadFavoritePokemons = () => {
-    const pokemons = JSON.parse(window.localStorage.getItem(favoritesKey)) || []
-    setFavorites(pokemons)
-  }
+    const pokemons = JSON.parse(window.localStorage.getItem(favoritesKey)) || [];
+    setFavorites(pokemons);
+  };
 
   useEffect(() => {
-    loadFavoritePokemons()
+    loadFavoritePokemons();
   }, []);
-  
+
+  useEffect(() => {
+    window.localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+  }, [favorites]);
+
   useEffect(() => {
     fetchPokemons();
   }, [page]);
 
   const updateFavoritePokemons = (name) => {
-    const updatedFavorites = [...favorites]
-    const favoriteIndex = favorites.indexOf(name)
-    if(favoriteIndex >= 0) {
+    const updatedFavorites = [...favorites];
+    const favoriteIndex = favorites.indexOf(name);
+    if (favoriteIndex >= 0) {
       updatedFavorites.splice(favoriteIndex, 1);
-    }else {
+    } else {
       updatedFavorites.push(name);
     }
-    window.localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites))
     setFavorites(updatedFavorites);
-  }
+  };
 
   const onSearchHandler = async (pokemon) => {
-    if(!pokemon) {
+    if (!pokemon) {
       return fetchPokemons();
     }
 
-    setLoading(true)
-    setNotFound(false)
-    const result = await searchPokemon(pokemon)
-    if(!result) {
-      setNotFound(true)
+    setLoading(true);
+    setNotFound(false);
+    const result = await searchPokemon(pokemon);
+    if (!result) {
+      setNotFound(true);
     } else {
-      setPokemons([result])
-      setPage(0)
-      setTotalPages(1)
+      setPokemons([result]);
+      setPage(0);
+      setTotalPages(1);
     }
-    setLoading(false)
+    setLoading(false);
+  };
 
-  }
   return (
-    <FavoriteProvider
-      value={{
-        favoritePokemons: favorites,
-        updateFavoritePokemons: updateFavoritePokemons,
-      }}
-    >
-      <div>
-        <Navbar />
-        <Searchbar onSearch={onSearchHandler}/>
-        {notFound ? (
-          <div class-name="not-found-text"> Ooops!!! </div>
-        ) : 
-        (<Pokedex
+    <Authenticator>
+  <FavoriteProvider
+    value={{
+      favoritePokemons: favorites,
+      updateFavoritePokemons: updateFavoritePokemons,
+    }}
+  >
+    <div>
+      <Navbar />
+      <Searchbar onSearch={onSearchHandler} />
+      {notFound ? (
+        <div className="not-found-text">
+          Ooops, name or number not found!!!
+        </div>
+      ) : (
+        <Pokedex
           pokemons={pokemons}
           loading={loading}
           page={page}
           setPage={setPage}
           totalPages={totalPages}
-        />)}
-      </div>
-    </FavoriteProvider>
+        />
+      )}
+    </div>
+  </FavoriteProvider>
+</Authenticator>
+
   );
 }
 
-export default App
+export default App;

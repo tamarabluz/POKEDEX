@@ -2,6 +2,27 @@
   margin: 0px;
 }
 
+.navbar-signout {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navbar-signout button {
+  background-color: #0e6f9f;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  color: white;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-signout button:hover {
+  background-color: #3f9ece;
+}
 
 
 
@@ -32,7 +53,27 @@
   color: white;
   padding: 10px 12px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: auto;
 }
+
+.searchbar-btn button:hover {
+  background-color: #3f9ece;
+}
+
+.searchbar-btn button:active {
+  background-color: #0c5d8e;
+}
+
+.searchbar-btn button:focus {
+  outline: none;
+}
+
+.searchbar-btn button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 
 .pokedex-header {
   display: flex;
@@ -161,10 +202,16 @@
 }
 
 .not-found-text {
-  text-align: center;
-  font-size: 2rem;
-  padding: 20px;
-}
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+    text-shadow: 1px 1px #eee;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding: 20px;
+  }
+  
 .card-move {
   background-color: #f3ebeb;
   border-radius: 10px;
@@ -174,13 +221,11 @@
 }
 
 @media (max-width: 767px) {
-  /* Estilos para telas menores que 767px */
   .pokedex-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 479px) {
-  /* Estilos para telas menores que 479px */
   .pokedex-grid {
     grid-template-columns: repeat(1, 1fr);
   }
