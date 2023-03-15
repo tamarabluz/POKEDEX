@@ -69,6 +69,8 @@
 <br>
 <br>
 <h3 align="center" >Deploy do projeto: http://app-bgc.s3-website-sa-east-1.amazonaws.com/</h3>
+<br>
+<br>
 
 
 <h3>Desenvolvedora</h3>
