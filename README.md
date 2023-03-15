@@ -69,7 +69,7 @@
 <h3 align="center" >Deploy do projeto: http://app-bgc.s3-website-sa-east-1.amazonaws.com/</h3>
 
 
-<h3>Autora</h3>
+<h3>Desenvolvedora</h3>
 
 
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/97554143?v=4" width="100px;" alt=""/>
