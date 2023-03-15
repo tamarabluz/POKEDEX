@@ -94,7 +94,7 @@ function App() {
       <Searchbar onSearch={onSearchHandler} />
       {notFound ? (
         <div className="not-found-text">
-          Ooops, name or number not found!!!
+          Ooops, name or number not found!
         </div>
       ) : (
         <Pokedex
