@@ -2,7 +2,7 @@
 ![alt text](https://github.com/tamarabluz/POKEDEX/blob/main/src/assets/pokedexlogo.png)
 
 <h1 align="center">Projeto Desenvolvido para BGC - Brasil</h1>
-<p align="center">Repositório criado para etapa de teste."</p>
+<p align="center">Repositório criado para etapa de teste.</p>
 
 <h3 align="center">Status do Projeto</h3>
 <p align="center"> ✅ Concluído. </p>
@@ -66,7 +66,7 @@
 <br>
 <br>
 <br>
-
+<h3 align="center" >Deploy do projeto: http://app-bgc.s3-website-sa-east-1.amazonaws.com/</h3>
 
 
 <h3>Autora</h3>
