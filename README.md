@@ -2,9 +2,9 @@
 ![alt text](https://github.com/tamarabluz/POKEDEX/blob/main/src/assets/pokedexlogo.png)
 
 
-<h1 align="center">Projeto Desenvolvido para BGC - Brasil</h1>
-<p align="center"> https://www.bgcbrasil.com.br/<p/>
-<p align="center">Repositório criado para etapa de teste.</p>
+<h1 align="center">Projeto Desenvolvido Pokedéx - Brasil</h1>
+
+<p align="center">Repositório criado frontend, utilizando React, aws s3 e aws cognito.</p>
 
 <h3 align="center">Status do Projeto</h3>
 <p align="center"> ✅ Concluído. </p>
