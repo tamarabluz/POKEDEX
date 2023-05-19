@@ -2,7 +2,7 @@
 ![alt text](https://github.com/tamarabluz/POKEDEX/blob/main/src/assets/pokedexlogo.png)
 
 
-<h1 align="center">Projeto Desenvolvido Pokedéx - Brasil</h1>
+<h1 align="center">Projeto Desenvolvido Pokedéx </h1>
 
 <p align="center">Repositório criado frontend, utilizando React, aws s3 e aws cognito.</p>
 
